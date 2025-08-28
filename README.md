@@ -6,3 +6,4 @@ Playing around with Laravel 12.x, trying to achieve:
 - play with multiple validators
 - use built-in methods( findOrFail, findById)
 - create and implement interfaces using the **Repository Pattern**
+- Feature test

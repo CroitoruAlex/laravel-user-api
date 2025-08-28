@@ -38,7 +38,7 @@ class UserController
 
         $user = $this->userRepository->create($validated);
 
-        return response()->json($user);
+        return response()->json($user, 201);
     }
 
     public function update(UpdateUserRequest $request, int $id)
@@ -56,13 +56,13 @@ class UserController
         $user = User::findOrFail($id);
         $user->delete();
 
-        return response()->json(null, 204);
+        return response()->noContent();
     }
 
     public function getUsernameById(int $id)
     {
         $username = $this->userRepository->getUsername($id);
 
-        return response()->json($username);
+        return response()->json(['name' => $username]);
     }
 }
